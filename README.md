@@ -6,11 +6,13 @@ Enteractive.Client.Php Demo
 - Clone the repo: git clone https://github.com/enteractivecloud/enteractive-client-php.git
 
 ## Introduction
-Enteractive SDK Demo project is a demonstration of how to implement and utilize the features the Enteractive Client API offers. The aim of this demo is to facilitate and simplify the data transfers and data synchronisation between Enteractive and its operators. The Enteractive client PHP Demo project can be adapted with minimal effort to accommodate the business requirements of our partners. 
+Enteractive SDK Demo project is a basic demonstration of how to connect to the Enteractive Client API and preform basic operations on the Enteractive (Re)Activation cloud. The aim of this demo is to provide a basic integration for adding leads and data synchronisation between Enteractive and its operators. Note that the Enteractive Client API itself covers several more advanced functionalities which are not demonstrated in this demo. 
 
 ## Requirements
 
--	Enteractive API credentials. [Contact Enteractive for more information](https://enteractive.com/contact-us)
+-	Enteractive API credentials.
+-	IP whitelisting
+-	[Contact Enteractive for more information](https://enteractive.com/contact-us)
 
 ## Guidelines
 ### Player Import
@@ -18,7 +20,7 @@ The PlayerImport.php class demonstrates the process of importing new players ont
 
 Flow:
 1.	Get player data from a relevant data source (database, API, csv, etc.)
-2.	Validate the data to make sure that a call project for the players’ country and brand exists on Enteractive and eliminate any invalid players from the array.
+2.	Validate the data to make sure that a call project for the players’ country, brand and campaign exists on Enteractive and remove any invalid players from the array.
 3.	Generate the add players request object (/Models/request/ImportPlayerRequest.php) with the validated player data.
 4.	Process request using the Enteractive Client API endpoint AddPlayers (/react/2.0/Player/AddPlayers).
 5.	Await the result from the AddPlayers endpoint and check if the request was successful.
